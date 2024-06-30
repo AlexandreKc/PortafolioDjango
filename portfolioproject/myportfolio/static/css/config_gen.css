@@ -1,0 +1,72 @@
+/* Esta hoja esta dedicada a la configuración general de las paginas extra */
+:root{
+    --color1:#0c0c22;
+    --color2:#21213b;
+    --color3:#0052a5;
+    --color4:#333399;
+}
+
+/* CONFIGURACIONES GENERALES */
+body{
+    background-color: var(--color1);
+    height: 100vh;
+}
+body, html{
+    overflow-x: hidden;
+}
+
+.contenedor-general{
+    padding-bottom:2500px;
+}
+/* Comentar el codigo de arriba al terminar de añadir a la pag */
+
+.parallax{
+    background-image: url("../image/background-image.png");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+
+
+/* NavBar */
+.navbar{
+    font-family: "Poetsen One", sans-serif;
+    background-color: var(--color2) !important;
+    box-shadow: 0px 2px 4px var(--color1) !important;
+}
+/* Links navbar */
+.navbar li a{
+    color: white !important;
+    font-size:20px;
+}
+.navbar li a:hover{
+    color: var(--color3) !important;
+    box-shadow: inset 0 0 15px var(--color3), 0 0 15px var(--color3);
+}
+
+/* Logo */
+.navbar-brand{
+    font-size: 35px;
+    color: white !important;
+}
+.navbar-brand img{
+    border-radius: 30%;
+}
+.navbar-brand img:hover{
+    box-shadow: inset 0 0 15px var(--color3), 0 0 15px var(--color3);
+}
+
+
+
+
+
+
+
+/* Responsive */
+@media screen and (max-width: 768px){
+    .navbar-brand{
+        font-size: 20px;
+    }
+}

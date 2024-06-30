@@ -1,0 +1,297 @@
+{% load bootstrap5 %}
+{% load static%}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title >Portafolio Personal</title>
+    <!-- icono pesta{a} -->
+    <link rel="icon" href="{% static 'image/icono-pagina.png' %}">
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Fuente 1 - Utilizada en links de NavBar-->
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+    <!-- Fuente 2 - Utilizada en texto sobre mi -->
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,500;1,100;1,500&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    
+    <!-- Bootstrap 5 LINK-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/breadcrumbs.css' %}">
+    <link rel="stylesheet" href="{% static 'css/stylemain.css' %}">
+    <link rel="stylesheet" href="{% static 'css/config_gen.css' %}">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <!-- Glider JS -->
+    <link href="https://cdn.jsdelivr.net/npm/glider-js@1.7.9/glider.min.css" rel="stylesheet">
+    <!-- EmailJS -->
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script type="text/javascript">
+    emailjs.init('uaRAVtLPSN9PTfzhW')
+    </script>
+
+
+
+</head>
+<body>
+    <!-- Este es el contenedor general de la pagina -->
+    <div class="container-fluid mx-0 px-0 parallax contenedor-general">
+        <!--Sección Navbar -->
+        <div class="row barra-nav">
+            <section class="col-xl-12 col-sm-12 col-xs-12 col-12">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid p-3">
+                <a class="navbar-brand" href="index.html"><img src="{% static 'image/logo.png' %}" height="70"> Portafolio Personal</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span><img src="{% static 'image/menu.png' %}" height="40"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre_mi">SobreMi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contactame">Contacto EMAIL</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#carrusel">Destacado</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#conocimientos">Conocimientos</a>
+                    </li>
+                    </ul>
+                </div>
+                </div>
+            </nav>
+            </section>
+        </div>
+        <!--Sección Breadcrumb  -->
+        <div class="row cotenedor-bread">
+            <section class="col-xl-12 col-sm-12 col-xs-12 col-12">
+                <ul class="breadcrumbs">
+                    <li class="breadcrumbs__item">
+                        <a href="index.html" class="breadcrumbs__link--active">Inicio</a>
+                    </li>
+                    <!-- <li class="breadcrumbs__item">
+                        <a href="index.html" class="breadcrumbs__link">ASD</a>
+                    </li> -->
+                </ul>
+            </section>
+        </div>
+        <!--Sección Sobre mi -->
+        <div class="row contenedor-info" id="sobre_mi">
+            <section class="col-xl-3 col-sm-3 col-xs-3 col-3 informacion-sec">
+                <img src="{% static 'image/foto-sobremi.jpeg' %}" alt="ico-info" height="550">
+            </section>
+            <section class="col-xl-9 col-sm-9 col-xs-9 col-9 informacion-sec-text">
+                <h1 class="titulo-sobremi">Sobre mi  <p class="info-sobremi">Hola, soy Sebastián Carrera, un estudiante de ingeniería en informática en la Universidad Duoc UC. Actualmente estoy en mi segundo año y esta página es mi portafolio, donde encontrarás información sobre mí, así como un apartado para contactarme.</p></h1>
+            </section>
+        </div>
+        <!-- Carousel - relevantes -->
+        <div class="row"  id="carrusel">
+            <div class="col-12">
+            <h2 class="informacion-relevante">Información relevante</h2>
+            </div>
+        </div>
+        <div class="row contenedor-carousel">
+            <div class="fill col-1 align-items-center justify-content-end d-flex">
+                <button aria-label="Anterior" class="carousel__anterior"><i class="fa-solid fa-chevron-left"></i></button>
+            </div>
+            <div class="carousel col-xl-10 col-sm-10 col-xs-10 col-10">
+                <div class="carousel__contenedor">
+                    <div class="carousel__lista">
+                        <div class="carousel__elemento"> <img src="{% static 'image/img_carousel1/1.png' %}"> <a href=""><p>Demostración API</p></a> </div>
+                        <div class="carousel__elemento"> <img src="{% static 'image/img_carousel1/2.jpg' %}"> <a href="index.html"><p>Certificación "///"</p></a> </div>
+                        <div class="carousel__elemento"> <img src="{% static 'image/img_carousel1/3.png' %}"> <a href="index.html"><p>Proyecto /////</p></a> </div>
+                        <div class="carousel__elemento"> <img src="{% static 'image/img_carousel1/4.jpg' %}"> <a href="index.html"><p>Conocimientos</p></a> </div>
+                        <div class="carousel__elemento"> <img src="{% static 'image/img_carousel1/5.jpg' %}"> <a href="index.html"><p>Proyecto zapayo</p></a> </div>
+                        <div class="carousel__elemento"> <img src="{% static 'image/img_carousel1/6.png' %}"> <a href="index.html"><p>Inteligencia artificial</p></a> </div>
+                        <div class="carousel__elemento"> <img src="{% static 'image/img_carousel1/7.jpg' %}"> <a href="index.html"><p>Que es SQL - Mi curso sql</p></a> </div>
+                        <div class="carousel__elemento"> <img src="{% static 'image/img_carousel1/8.jpg' %}"> <a href="index.html"><p>Aprende lo básico</p></a> </div>
+                        <div class="carousel__elemento"> <img src="{% static 'image/img_carousel1/9.png' %}"> <a href="index.html"><p>Gestión de proyectos</p></a> </div>
+                    </div>
+                    <div role="tablist" class="carousel__indicadores"></div>
+                </div>
+            </div>
+            <div class="fill col-1 d-flex align-items-center justify-content-start">
+                <button aria-label="Siguiente" class="carousel__siguiente"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </div>
+        <!-- Sección de contacto -->
+        <div class="row"  id="contactame">
+            <div class="col-12">
+            <h2 class="informacion-relevante">Información E-Mail</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="relleno col-1 col-xl-1 col-sm-1 col-xs-1 col-1"></div>
+            <div class="contacto col-10 col-xl-10 col-sm-10 col-xs-10 col-10">
+                <form  method="POST" class="formulario__contenedor needs-validation" action="{% url 'contacto_nuevo' %}"  action="https://formsubmit.co/sebastiancarrera2021@gmail.com" novalidate>
+                    {% csrf_token %}
+                    <!-- Nombre completo -->
+                    <div class="mb-3">
+                        <label for="id_nombre" class="form-label pb-2">Ingrese su nombre</label>
+                        <input type="text" class="form-control" id="id_nombre" placeholder="Indique su nombre" name="nombre" required>
+                        <!-- Mensaje de error si el campo está vacío -->
+                        <div class="text-danger invalid-feedback">Por favor ingresar un nombre</div>
+                    </div>
+                    <!-- Mensaje -->
+                    <div class="mb-3 pt-3 pb-3">
+                        <label for="id_mensaje" class="form-label pb-2">Nota</label>
+                        <textarea class="form-control" id="id_mensaje" rows="3" placeholder="Nota o petición" name="mensaje" required></textarea>
+                        <div class="text-danger invalid-feedback">Por favor ingresa un mensaje</div>
+                    </div>
+                    <!-- Correo -->
+                    <div class="mb-3 pb-3">
+                        <label for="id_email" class="form-label pb-2">Correo</label>
+                        <input type="email" class="form-control" id="id_email" aria-describedby="emailHelp" placeholder="Indique su correo" name="email" required>
+                        <div class="text-danger invalid-feedback" Por favor ingresar un correo></div>
+                    </div>
+                    <button type="submit" class="btn btn-enviar">Enviar</button>
+                    <div id="info_invalida" class="text-danger"></div>
+                    <div id="info_valida" class="text-success"></div>
+                </form>
+            
+            </div>
+        </div>
+        <br>
+
+        <!-- sección Habilidades tecnologicas -->
+        <div class="row"  id="conocimientos">
+            <div class="col-12">
+            <h2 class="informacion-relevante">Conocimientos tecnologicos</h2>
+            </div>
+        </div>
+        <div class="row contenedor-card">
+            <div class="col-xl-12 col-sm-12 col-xs-12 col-12 mini-contenedor-card">
+                
+                <div class="content tarjeta">
+                    <figure>
+                        <img src="{% static 'image/img_card/img1.jpg' %}">
+                    </figure>
+                    <div class="contenido_tarjeta">
+                        <h3>Python</h3>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A sequi doloremque fugit. Minus expedita maxime culpa nemo quaerat natus? Iure, optio? Quasi, dolor nobis? Dolorum aperiam assumenda laboriosam maxime minima.</p>
+                    </div>
+                    <button data-bs-toggle="modal" data-bs-target="#modal_1">Leer mas...</button>
+                </div>
+
+                <div class="content tarjeta">
+                    <figure>
+                        <img src="{% static 'image/img_card/img2.jpg' %}">
+                    </figure>
+                    <div class="contenido_tarjeta">
+                        <h3>Sql</h3>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A sequi doloremque fugit. Minus expedita maxime culpa nemo quaerat natus? Iure, optio? Quasi, dolor nobis? Dolorum aperiam assumenda laboriosam maxime minima.</p>
+                    </div>
+                    <button data-bs-toggle="modal" data-bs-target="#modal_2">Leer mas...</button>
+                </div>
+
+                <div class="content tarjeta">
+                    <figure>
+                        <img src="{% static 'image/img_card/img3.jpg' %}">
+                    </figure>
+                    <div class="contenido_tarjeta">
+                        <h3>Java</h3>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A sequi doloremque fugit. Minus expedita maxime culpa nemo quaerat natus? Iure, optio? Quasi, dolor nobis? Dolorum aperiam assumenda laboriosam maxime minima.</p>
+                    </div>
+                    <button data-bs-toggle="modal" data-bs-target="#modal_3">Leer mas...</button>
+                </div>
+            </div>
+        </div>
+        <!-- Seccion para modales -->
+        <div class="modal" id="modal_1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title">1 Semestre python</h5>
+                        <button class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Conocimientos basicos, estructuras funciones basicas, condicionales, variables, arrays, librerias, etc.</p>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="modal_2">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title">5 semestres SQL</h5>
+                        <button class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Conocimientos basicos, modelamiento, consultas, programación</p>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="modal_3">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title">1 Semestre Java</h5>
+                        <button class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Conocimientos basicos, estructuras funciones basicas, condicionales, variables, arrays, librerias, etc.</p>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+          <!-- Projects Section -->
+
+        <div class="row contenedor-django" id="projects">
+            <div class="container col-12">
+                <h2 class="text-center titulo-proyectos">Mis proyectos</h2>
+                <div class="row">
+                    {% for proyecto in proyectos %}
+                    <div class="col-md-4 tarjeta-dj">
+                    <div class="card mb-4 tarjeta-proyectodj">
+                        <img src="{{ proyecto.imagen.url }}" class="card-img-top" alt="{{ proyecto.titulo }}">
+                        <div class="card-body">
+                        <h5 class="card-title">{{ proyecto.titulo }}</h5>
+                        <p class="card-text">{{ proyecto.descripcion }}</p>
+                        <a href="{{ proyecto.link_sitio }}" class="btn btn-primary" target="_blank">Web</a>
+                        <a href="{{ proyecto.link_repositorio }}" class="btn btn-secondary" target="_blank">Repositorio</a>
+                        </div>
+                    </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Glider js -->
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.9/glider.min.js"></script>
+    <!-- Bootstrap 5 & JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <!-- JS & JQuery -->
+    <script src="{% static 'js/jquery-3.7.1.min.js' %}"></script>
+    <script src="{% static 'js/action.js' %}"></script>
+    <script src="{% static 'js/formulario.js' %}"></script>
+</body>
+</html>
