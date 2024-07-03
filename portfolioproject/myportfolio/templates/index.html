@@ -276,6 +276,7 @@
                         <p class="card-text">{{ proyecto.descripcion }}</p>
                         <a href="{{ proyecto.link_sitio }}" class="btn btn-primary" target="_blank">Web</a>
                         <a href="{{ proyecto.link_repositorio }}" class="btn btn-secondary" target="_blank">Repositorio</a>
+                        <a href="{% url 'proyecto_detalle' proyecto.pk %}" class="btn btn-info">Ver Detalle</a>
                         </div>
                     </div>
                     </div>
