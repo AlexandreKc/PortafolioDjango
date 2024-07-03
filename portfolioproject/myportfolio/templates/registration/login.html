@@ -1,11 +1,23 @@
 {% extends 'base_generic.html' %}
+{% load static %}
 {% block content %}
-    <div class="container mt-5">
-        <h2> Iniciar sesion </h2>
-        <form method="POST">
-            {% csrf_token %}
-            {{form.as_p}}
-            <button type="submit" class="btn btn-primary"> Iniciar sesión </button>
-        </form>    
+<div class="container-fluid mx-0 px-0 parallax contenedor-general">
+    
+    <div class="contenedor-titulo-inis">
+        <div class="row barra-nav">
+            <section class="col-xl-12 col-sm-12 col-xs-12 col-12 columna-inicioses">
+                <h2 class="titulo-iniciosesion">Inicio de sesión</h2>
+                <a href="{% url 'home' %}"><img src="{% static 'image/casa.png' %}" height=70></a>
+            </section>
+
+            <section class="col-xl-12 col-sm-12 col-xs-12 col-12 columna_form">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                </form>
+            </section>
+        </div>
     </div>
+
 {%  endblock %}

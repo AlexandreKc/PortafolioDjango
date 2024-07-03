@@ -148,6 +148,7 @@ body{
     background-color: var(--color3);
     color: white;
 }
+
 /* Contenedor proyectos django */
 .contenedor-django h2{
     box-shadow: inset 0 0 15px var(--color3), 0 0 15px var(--color3);   
@@ -161,7 +162,15 @@ body{
     font-family: "Poetsen One", sans-serif;
     padding: 2%;
 }
-
+/* contacto */
+.needs-validation{
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+.Contacto-label{
+    color: white;
+    font-family: "Poetsen One", sans-serif;
+}
 
 /* Responsive */
 @media screen and (max-width: 768px) {

@@ -150,7 +150,7 @@ LOGOUT_REDIRECT_URL = '/'
 
 JAZZMIN_SETTINGS = {
 
-    "site_title": "Marcelo Crisóstomo",  # Título del sitio que aparece en la pestaña del navegador.
+    "site_title": "Sebastián Carrera",  # Título del sitio que aparece en la pestaña del navegador.
 
     "site_header": "Panel de Administrador",  # Encabezado del sitio en el panel de administración.
 

@@ -61,7 +61,7 @@
                         <a class="nav-link" href="#sobre_mi">SobreMi</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contactame">Contacto EMAIL</a>
+                        <a class="nav-link" href="#contactame">Contacto</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#carrusel">Destacado</a>
@@ -74,6 +74,9 @@
                     </li>
                     <li>
                         <a href="{% url 'login' %}" class="btn">Login</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'contactos' %}" class="btn">Mensajes</a>
                     </li>
                     </ul>
                 </div>
@@ -136,17 +139,35 @@
         <!-- Sección de contacto -->
         <div class="row"  id="contactame">
             <div class="col-12">
-            <h2 class="informacion-relevante">Información de</h2>
+            <h2 class="informacion-relevante">Contactame</h2>
             </div>
         </div>
         <div class="row">
             <div class="relleno col-1 col-xl-1 col-sm-1 col-xs-1 col-1"></div>
             <div class="contacto col-10 col-xl-10 col-sm-10 col-xs-10 col-10">
-                <form  method="POST" class="formulario__contenedor needs-validation" action="{% url 'contacto_nuevo' %}"  action="https://formsubmit.co/sebastiancarrera2021@gmail.com" novalidate>
+                <form id="myForm" method="POST" action="{% url 'contacto_nuevo' %}" class="needs-validation" novalidate>
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-enviar">Enviame un correo</button>
+                    <!-- Nombre completo -->
+                    <div class="mb-3 Contacto-label">
+                        <label for="exampleFormControlInput1" class="form-label Contacto-label pb-2">Ingrese su
+                            nombre</label>
+                        <input type="Text" class="form-control" id="name" name="nombre" placeholder="">
+                        <!-- Mensaje de error si el campo está vacío -->
+                        <div id="nombreERROR" class="text-danger ContactR"></div>
+                    </div>
+                    <!-- Correo -->
+                    <div class="mb-3 pb-3 Contacto-label">
+                        <label for="exampleInputEmail1" class="form-label Contacto-label pb-2">Correo</label>
+                        <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+                        <div id="correoERROR" class="text-danger ContactR"></div>
+                    </div>
+                    <!-- Mensaje -->
+                    <div class="mb-3 pb-3 Contacto-label">
+                        <label for="exampleFormControlTextarea1" class="form-label Contacto-label pb-2">Mensaje</label>
+                        <textarea class="form-control" id="message" name="mensaje" rows="3" placeholder=""></textarea>
+                    </div>
+                    <button type="submit" value="Enviar" id="button" class="btn btn-success ContacT">Enviar</button>
                 </form>
-            
             </div>
         </div>
         <br>
@@ -168,7 +189,7 @@
                         <h3>Python</h3>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A sequi doloremque fugit. Minus expedita maxime culpa nemo quaerat natus? Iure, optio? Quasi, dolor nobis? Dolorum aperiam assumenda laboriosam maxime minima.</p>
                     </div>
-                    <button data-bs-toggle="modal" data-bs-target="#modal_1">Leer mas...</button>
+                    <button data-bs-toggle="modal" data-bs-target="#modal_1" class="boton-abremodal">Leer mas...</button>
                 </div>
 
                 <div class="content tarjeta">
@@ -179,7 +200,7 @@
                         <h3>Sql</h3>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A sequi doloremque fugit. Minus expedita maxime culpa nemo quaerat natus? Iure, optio? Quasi, dolor nobis? Dolorum aperiam assumenda laboriosam maxime minima.</p>
                     </div>
-                    <button data-bs-toggle="modal" data-bs-target="#modal_2">Leer mas...</button>
+                    <button data-bs-toggle="modal" data-bs-target="#modal_2" class="boton-abremodal">Leer mas...</button>
                 </div>
 
                 <div class="content tarjeta">
@@ -190,7 +211,7 @@
                         <h3>Java</h3>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A sequi doloremque fugit. Minus expedita maxime culpa nemo quaerat natus? Iure, optio? Quasi, dolor nobis? Dolorum aperiam assumenda laboriosam maxime minima.</p>
                     </div>
-                    <button data-bs-toggle="modal" data-bs-target="#modal_3">Leer mas...</button>
+                    <button data-bs-toggle="modal" data-bs-target="#modal_3" class="boton-abremodal">Leer mas...</button>
                 </div>
             </div>
         </div>

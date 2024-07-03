@@ -1,1 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+
+.login_logo picture{
+    border-radius: 50px !important;
+}

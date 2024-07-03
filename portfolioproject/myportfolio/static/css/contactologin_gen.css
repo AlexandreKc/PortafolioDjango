@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+:root{
+    --color1:#0c0c22;
+    --color2:#21213b;
+    --color3:#0052a5;
+    --color4:#333399;
+}
+body{
+    color: white;
+}
+.btn-volver{
+    text-decoration: none;
+}
+    
+/* CSS PARA LOGIN */
+.contenedor-titulo-inis{
+    align-items: center !important;
+    text-align: center !important;
+}
+.columna-inicioses{
+    background-color: var(--color2);
+    padding-top: 3%;
+    padding-bottom: 3%;
+    align-self: center;
+    color: white;
+    font-family: "Poetsen One", sans-serif;
+    box-shadow: inset 0 0 15px var(--color3), 0 0 15px var(--color3);  
+}
+
+.columna_form{
+    padding-top: 150px;
+    font-family: "Poetsen One", sans-serif;
+}
