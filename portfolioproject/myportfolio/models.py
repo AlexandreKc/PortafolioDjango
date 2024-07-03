@@ -33,9 +33,18 @@ class Proyecto(models.Model):
 class Contacto(models.Model):
     nombre = models.CharField(max_length=100)
     email = models.EmailField()
-    mensaje = models.TextField()
-    fecha = models.DateTimeField(auto_now_add=True)
+    mensaje = models.TextField()  # Campo para el mensaje original
+    mensaje_cifrado = models.TextField()  # Campo para almacenar el mensaje cifrado
+    fecha = models.DateTimeField(auto_now_add=True)  # Añade el campo de fecha
+
+    def save(self, *args, **kwargs):
+        # Cifra el mensaje antes de guardarlo
+        self.mensaje_cifrado = encrypt_message(self.mensaje)
+        super().save(*args, **kwargs)
+
+    def get_mensaje(self):
+        # Descifra el mensaje al recuperarlo
+        return decrypt_message(self.mensaje_cifrado)
 
     def __str__(self):
         return self.nombre
-

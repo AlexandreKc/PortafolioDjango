@@ -51,3 +51,9 @@ def contacto_lista(request):
     return render(request,'myportfolio/contacto_lista.html',{'contactos':contactos})
 def contacto_confirmacion(request):
     return render(request,'myportfolio/contacto_confirmacion.html')
+
+def contacto_confirmacion(request):
+    return render(request, 'myportfolio/contacto_confirmacion.html')
+@login_required
+def vista_protegida(request):
+    return render(request, 'vista_protegida.html')

@@ -5,6 +5,10 @@
     --color4:#333399;
 }
 
+
+body{
+    padding-bottom: 1500px;
+}
 /* Seccion info */
 .contenedor-info{
     align-content: center;
@@ -155,7 +159,7 @@
 }
 .tarjeta-dj{
     font-family: "Poetsen One", sans-serif;
-    padding: 5%;
+    padding: 2%;
 }
 
 
