@@ -48,14 +48,14 @@
             <section class="col-xl-12 col-sm-12 col-xs-12 col-12">
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid p-3">
-                <a class="navbar-brand" href="index.html"><img src="{% static 'image/logo.png' %}" height="70"> Portafolio Personal</a>
+                <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'image/logo.png' %}" height="70"> Portafolio Personal</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span><img src="{% static 'image/menu.png' %}" height="40"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#sobre_mi">SobreMi</a>
@@ -69,6 +69,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#conocimientos">Conocimientos</a>
                     </li>
+                    <li>
+                        <a href="{% url 'admin:index' %}" class="btn">Panel admin</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'login' %}" class="btn">Login</a>
+                    </li>
                     </ul>
                 </div>
                 </div>
@@ -80,7 +86,7 @@
             <section class="col-xl-12 col-sm-12 col-xs-12 col-12">
                 <ul class="breadcrumbs">
                     <li class="breadcrumbs__item">
-                        <a href="index.html" class="breadcrumbs__link--active">Inicio</a>
+                        <a href="{% url 'home' %}" class="breadcrumbs__link--active">Inicio</a>
                     </li>
                     <!-- <li class="breadcrumbs__item">
                         <a href="index.html" class="breadcrumbs__link">ASD</a>
@@ -110,7 +116,7 @@
             <div class="carousel col-xl-10 col-sm-10 col-xs-10 col-10">
                 <div class="carousel__contenedor">
                     <div class="carousel__lista">
-                        <div class="carousel__elemento"> <img src="{% static 'image/img_carousel1/1.png' %}"> <a href=""><p>Demostración API</p></a> </div>
+                        <div class="carousel__elemento"> <img src="{% static 'image/img_carousel1/1.png' %}"> <a href="{% url 'API' %}"><p>Demostración API</p></a> </div>
                         <div class="carousel__elemento"> <img src="{% static 'image/img_carousel1/2.jpg' %}"> <a href="index.html"><p>Certificación "///"</p></a> </div>
                         <div class="carousel__elemento"> <img src="{% static 'image/img_carousel1/3.png' %}"> <a href="index.html"><p>Proyecto /////</p></a> </div>
                         <div class="carousel__elemento"> <img src="{% static 'image/img_carousel1/4.jpg' %}"> <a href="index.html"><p>Conocimientos</p></a> </div>
@@ -130,7 +136,7 @@
         <!-- Sección de contacto -->
         <div class="row"  id="contactame">
             <div class="col-12">
-            <h2 class="informacion-relevante">Información E-Mail</h2>
+            <h2 class="informacion-relevante">Información de</h2>
             </div>
         </div>
         <div class="row">
@@ -138,28 +144,7 @@
             <div class="contacto col-10 col-xl-10 col-sm-10 col-xs-10 col-10">
                 <form  method="POST" class="formulario__contenedor needs-validation" action="{% url 'contacto_nuevo' %}"  action="https://formsubmit.co/sebastiancarrera2021@gmail.com" novalidate>
                     {% csrf_token %}
-                    <!-- Nombre completo -->
-                    <div class="mb-3">
-                        <label for="id_nombre" class="form-label pb-2">Ingrese su nombre</label>
-                        <input type="text" class="form-control" id="id_nombre" placeholder="Indique su nombre" name="nombre" required>
-                        <!-- Mensaje de error si el campo está vacío -->
-                        <div class="text-danger invalid-feedback">Por favor ingresar un nombre</div>
-                    </div>
-                    <!-- Mensaje -->
-                    <div class="mb-3 pt-3 pb-3">
-                        <label for="id_mensaje" class="form-label pb-2">Nota</label>
-                        <textarea class="form-control" id="id_mensaje" rows="3" placeholder="Nota o petición" name="mensaje" required></textarea>
-                        <div class="text-danger invalid-feedback">Por favor ingresa un mensaje</div>
-                    </div>
-                    <!-- Correo -->
-                    <div class="mb-3 pb-3">
-                        <label for="id_email" class="form-label pb-2">Correo</label>
-                        <input type="email" class="form-control" id="id_email" aria-describedby="emailHelp" placeholder="Indique su correo" name="email" required>
-                        <div class="text-danger invalid-feedback" Por favor ingresar un correo></div>
-                    </div>
-                    <button type="submit" class="btn btn-enviar">Enviar</button>
-                    <div id="info_invalida" class="text-danger"></div>
-                    <div id="info_valida" class="text-success"></div>
+                    <button type="submit" class="btn btn-enviar">Enviame un correo</button>
                 </form>
             
             </div>

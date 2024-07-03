@@ -1,7 +1,11 @@
 from django.urls import path
+from django.contrib import admin
 from . import views
 urlpatterns = [
     path('',views.home, name='home'),
+    path('admin/', admin.site.urls),
+    path('API_1',views.api, name='API'),
+    path('login',views.login, name='login'),
     path('contacto/nuevo/', views.contacto_nuevo, name='contacto_nuevo'),
     path('contacto/<int:pk>/', views.contacto_detalle, name='contacto_detalle'),
     path('contacto/<int:pk>/editar/', views.contacto_editar, name='contacto_editar'),

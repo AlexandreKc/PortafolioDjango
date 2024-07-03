@@ -158,7 +158,7 @@ JAZZMIN_SETTINGS = {
 
     "site_logo": "image/logo.png",  # Ruta relativa al logotipo que aparece en la barra de navegación.
 
-    "welcome_sign": "Bienvenido Marcelo Crisóstomo",  # Mensaje de bienvenida que aparece en la página de inicio de sesión.
+    "welcome_sign": "Bienvenido al panel de administrador",  # Mensaje de bienvenida que aparece en la página de inicio de sesión.
 
     "search_model": "auth.User",  # Modelo utilizado para la búsqueda global en el panel de administración.
 
@@ -181,6 +181,8 @@ JAZZMIN_SETTINGS = {
     "default_icon_parents": "fas fa-chevron-circle-right",  # Icono por defecto para las aplicaciones principales.
 
     "default_icon_children": "fas fa-circle",  # Icono por defecto para los modelos dentro de las aplicaciones.
+    
+    "custom_css": "admin/css/jazzmin.css",
 
 }
 

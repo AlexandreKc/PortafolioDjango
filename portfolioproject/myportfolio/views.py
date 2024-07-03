@@ -10,7 +10,12 @@ def home(request):
     proyectos = Proyecto.objects.all()
     return render(request, 'index.html',{'proyectos':
     proyectos})
-
+#Vista pagina API
+def api(request):
+    return render(request, 'API_1.html')
+#Vista para login y logout
+def login(request):
+    return render(request,'accounts/login')
 #Vistas crud administracion de usuarios en el formulario de contacto
 def contacto_nuevo(request):
     if request.method=="POST":
