@@ -52,7 +52,7 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span><img src="{% static 'image/menu.png' %}" height="40"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse navbar-lis" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Inicio</a>
@@ -140,44 +140,6 @@
                 <button aria-label="Siguiente" class="carousel__siguiente"><i class="fa-solid fa-chevron-right"></i></button>
             </div>
         </div>
-        <!-- Sección de contacto -->
-        <div class="row"  id="contactame">
-            <div class="col-12">
-            <h2 class="informacion-relevante">Contactame</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="relleno col-1 col-xl-1 col-sm-1 col-xs-1 col-1"></div>
-            <div class="contacto col-10 col-xl-10 col-sm-10 col-xs-10 col-10">
-                <form id="myForm" method="POST" action="{% url 'contacto_nuevo' %}" class="needs-validation" novalidate>
-                    {% csrf_token %}
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Ingrese su nombre</label>
-                        <input type="text" class="form-control" id="name" name="nombre" placeholder="Nombre" required>
-                        <div class="invalid-feedback">
-                            Por favor ingrese su nombre.
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Correo electrónico</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="correo@ejemplo.com" required>
-                        <div class="invalid-feedback">
-                            Por favor ingrese un correo electrónico válido.
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="message" class="form-label">Mensaje</label>
-                        <textarea class="form-control" id="message" name="mensaje" rows="3" placeholder="Escribe tu mensaje aquí..." required></textarea>
-                        <div class="invalid-feedback">
-                            Por favor ingrese un mensaje.
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-success">Enviar</button>
-                </form>
-            </div>
-        </div>
-        <br>
-
         <!-- sección Habilidades tecnologicas -->
         <div class="row"  id="conocimientos">
             <div class="col-12">
@@ -294,6 +256,43 @@
                     </div>
                     {% endfor %}
                 </div>
+            </div>
+        </div>
+
+        {% comment %} seccion de contacto {% endcomment %}
+        <div class="row"  id="contactame">
+            <div class="col-12">
+            <h2 class="informacion-relevante">Contactame</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="relleno col-1 col-xl-1 col-sm-1 col-xs-1 col-1"></div>
+            <div class="contacto col-10 col-xl-10 col-sm-10 col-xs-10 col-10">
+                <form id="myForm" method="POST" action="{% url 'contacto_nuevo' %}" class="needs-validation" novalidate>
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Ingrese su nombre</label>
+                        <input type="text" class="form-control" id="name" name="nombre" placeholder="Nombre" required>
+                        <div class="invalid-feedback">
+                            Por favor ingrese su nombre.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Correo electrónico</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="correo@ejemplo.com" required>
+                        <div class="invalid-feedback">
+                            Por favor ingrese un correo electrónico válido.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Mensaje</label>
+                        <textarea class="form-control" id="message" name="mensaje" rows="3" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                        <div class="invalid-feedback">
+                            Por favor ingrese un mensaje.
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success">Enviar</button>
+                </form>
             </div>
         </div>
     </div>

@@ -1,8 +1,8 @@
 {% extends 'base_generic.html' %}
+{% load bootstrap5 %}
 {% load static %}
 {% block content %}
 <div class="container-fluid mx-0 px-0 parallax contenedor-general">
-    
     <div class="contenedor-titulo-inis">
         <div class="row barra-nav">
             <section class="col-xl-12 col-sm-12 col-xs-12 col-12 columna-inicioses">
@@ -10,14 +10,19 @@
                 <a href="{% url 'home' %}"><img src="{% static 'image/casa.png' %}" height=70></a>
             </section>
 
-            <section class="col-xl-12 col-sm-12 col-xs-12 col-12 columna_form">
+            <div class="col-xl-4 col-sm-4 col-xs-4 col-4"></div>
+
+            <section class="col-xl-4 col-sm-4 col-xs-4 col-4 columna_form columna_form_bg">
                 <form method="post">
                     {% csrf_token %}
                     {{ form.as_p }}
                     <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
                 </form>
             </section>
+
+            <div class="col-xl-4 col-sm-4 col-xs-4 col-4"></div>
         </div>
     </div>
+</div>
 
-{%  endblock %}
+{% endblock %}

@@ -23,9 +23,9 @@ def contacto_nuevo(request):
         if form.is_valid():
             form.save()
             return redirect('contacto_confirmacion')
-        else: 
-            form= ContactoForm()
-        return render(request, 'myportfolio/contacto_formulario.html', {'form': form})
+        else:
+            return redirect('contacto_error')
+
 
 @login_required
 def contacto_detalle(request,pk):
@@ -59,6 +59,9 @@ def contacto_confirmacion(request):
 
 def contacto_confirmacion(request):
     return render(request, 'myportfolio/contacto_confirmacion.html')
+
+def contacto_error(request):
+    return render(request, 'myportfolio/contacto_error.html')
 @login_required
 def vista_protegida(request):
     return render(request, 'vista_protegida.html')

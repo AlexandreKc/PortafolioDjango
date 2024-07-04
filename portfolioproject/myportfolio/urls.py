@@ -14,4 +14,5 @@ urlpatterns = [
     path('contacto/confirmacion/', views.contacto_confirmacion, name='contacto_confirmacion'),
     path('vista_protegida/', views.vista_protegida, name='vista_protegida'),
     path('proyecto/<int:pk>/', views.proyecto_detalle, name='proyecto_detalle'),
+    path('contacto/error/', views.contacto_error, name='contacto_error'),
 ]
