@@ -167,9 +167,9 @@ body{
     padding-top: 5%;
     padding-bottom: 5%;
 }
-.Contacto-label{
+.form-label{
+    font-family: "Poetsen One", sans-serif; 
     color: white;
-    font-family: "Poetsen One", sans-serif;
 }
 
 /* Responsive */

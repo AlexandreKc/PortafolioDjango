@@ -69,14 +69,18 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#conocimientos">Conocimientos</a>
                     </li>
-                    <li>
-                        <a href="{% url 'admin:index' %}" class="btn">Panel admin</a>
+                    <li class="nav-item">
+                        <a href="{% url 'admin:index' %}" class="btn btn-primary">Panel admin</a>
                     </li>
-                    <li>
-                        <a href="{% url 'login' %}" class="btn">Login</a>
+                    <li class="nav-item">
+                        <a href="{% url 'contacto_lista' %}" class="btn btn-primary">Mensajes</a>
                     </li>
-                    <li>
-                        <a href="{% url 'contactos' %}" class="btn">Mensajes</a>
+                    <li class="nav-item">
+                        {% if user.is_authenticated %}
+                            <a href="{% url 'logout' %}" class="btn btn-danger boton-logout">Logout</a>
+                        {% else %}
+                            <a href="{% url 'login' %}" class="btn btn-primary">Login</a>
+                        {% endif %}
                     </li>
                     </ul>
                 </div>
@@ -147,26 +151,28 @@
             <div class="contacto col-10 col-xl-10 col-sm-10 col-xs-10 col-10">
                 <form id="myForm" method="POST" action="{% url 'contacto_nuevo' %}" class="needs-validation" novalidate>
                     {% csrf_token %}
-                    <!-- Nombre completo -->
-                    <div class="mb-3 Contacto-label">
-                        <label for="exampleFormControlInput1" class="form-label Contacto-label pb-2">Ingrese su
-                            nombre</label>
-                        <input type="Text" class="form-control" id="name" name="nombre" placeholder="">
-                        <!-- Mensaje de error si el campo está vacío -->
-                        <div id="nombreERROR" class="text-danger ContactR"></div>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Ingrese su nombre</label>
+                        <input type="text" class="form-control" id="name" name="nombre" placeholder="Nombre" required>
+                        <div class="invalid-feedback">
+                            Por favor ingrese su nombre.
+                        </div>
                     </div>
-                    <!-- Correo -->
-                    <div class="mb-3 pb-3 Contacto-label">
-                        <label for="exampleInputEmail1" class="form-label Contacto-label pb-2">Correo</label>
-                        <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
-                        <div id="correoERROR" class="text-danger ContactR"></div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Correo electrónico</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="correo@ejemplo.com" required>
+                        <div class="invalid-feedback">
+                            Por favor ingrese un correo electrónico válido.
+                        </div>
                     </div>
-                    <!-- Mensaje -->
-                    <div class="mb-3 pb-3 Contacto-label">
-                        <label for="exampleFormControlTextarea1" class="form-label Contacto-label pb-2">Mensaje</label>
-                        <textarea class="form-control" id="message" name="mensaje" rows="3" placeholder=""></textarea>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Mensaje</label>
+                        <textarea class="form-control" id="message" name="mensaje" rows="3" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                        <div class="invalid-feedback">
+                            Por favor ingrese un mensaje.
+                        </div>
                     </div>
-                    <button type="submit" value="Enviar" id="button" class="btn btn-success ContacT">Enviar</button>
+                    <button type="submit" class="btn btn-success">Enviar</button>
                 </form>
             </div>
         </div>
